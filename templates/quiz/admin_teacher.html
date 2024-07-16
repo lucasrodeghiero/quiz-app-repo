@@ -1,0 +1,33 @@
+{% extends 'quiz/adminbase.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card bg-primary text-white">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="admin-view-teacher" class="text-white text-decoration-none">Total Teachers</a>
+          </h5>
+          <h2 class="card-text text-right">
+            <i class="fas fa-chalkboard-teacher me-2"></i>{{ total_teacher }}
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card bg-success text-white">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="admin-view-pending-teacher" class="text-white text-decoration-none">Pending Teachers</a>
+          </h5>
+          <h2 class="card-text text-right">
+            <i class="fas fa-spinner me-2"></i>{{ pending_teacher }}
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
