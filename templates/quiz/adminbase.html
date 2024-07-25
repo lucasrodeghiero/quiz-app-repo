@@ -4,8 +4,6 @@
 
 <head>
   <meta charset="utf-8">
-
-
   <style media="screen">
     a:link {
       text-decoration: none;
@@ -20,36 +18,38 @@
     header {
       position: fixed;
       background: linear-gradient(to bottom, #64bcf1, #5b98f1);
-      padding: 10px;
+      padding: 25px;
       width: 100%;
       z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .left_area {
+      display: flex;
+      align-items: center;
     }
 
     .left_area h3 {
       color: #fff;
-      margin: 0px;
+      margin: 0 0 0 30px;
       text-transform: uppercase;
       font-size: 22px;
       font-weight: 900;
-    }
-
-    .left_area span {
-      color: #19B3D3;
+      font-family: 'Alexandria';
     }
 
     .logout_btn {
       padding: 10px;
-      background: #000000;
+      background: #4573b8;
       text-decoration: none;
-      float: right;
-      margin-top: -50px;
-      margin-right: 40px;
-      border-radius: 2px;
+      border-radius: 10px;
       font-size: 15px;
       font-weight: 600;
       color: #fff;
       transition: 0.5s;
-
+      font-family: 'Alexandria';
     }
 
     .logout_btn:hover {
@@ -76,7 +76,7 @@
     }
 
     .sidebar h4 {
-      color: #ccc;
+      color: #ffffff;
       margin-top: 0;
       margin-bottom: 20px;
     }
@@ -90,7 +90,6 @@
       padding-left: 40px;
       box-sizing: border-box;
       transition: 0.5s;
-
     }
 
     .sidebar a:hover {
@@ -104,13 +103,13 @@
     label #sidebar_btn {
       z-index: 1;
       color: #fff;
-      position: fixed;
       cursor: pointer;
-      left: 300px;
       font-size: 20px;
-      margin: 5px 0;
       transition: 0.5s;
       transition-property: color;
+      display: flex;
+      align-items: center;
+      margin: 0 10px 0 0;
     }
 
     label #sidebar_btn:hover {
@@ -138,6 +137,7 @@
       background-size: cover;
       height: 100vh;
       transition: 0.5s;
+      font-family: 'Alexandria';
     }
 
     #check:checked~.content {
@@ -147,12 +147,10 @@
     #check {
       display: none;
     }
+
   </style>
 
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-
-
 </head>
 
 <body>
@@ -160,11 +158,11 @@
   <input type="checkbox" id="check">
   <!--header area start-->
   <header>
-    <label for="check">
-      <i style="left: 200px;margin-top: 17px;" class="fas fa-bars" id="sidebar_btn"></i>
-    </label>
     <div class="left_area">
-      <h3>Online Quiz</h3>
+      <label for="check" class="sidebar_btn">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <h3>WeQuiz</h3>
     </div>
     <div class="right_area">
       <a href="/logout" class="logout_btn">Logout</a>
@@ -174,36 +172,28 @@
   <!--sidebar start-->
   <div class="sidebar">
     <center>
-
-      <img src="{% static " image/admin.png" %}" class="profile_image" alt="">
+      <img src="{% static 'image/admin.png' %}" class="profile_image" alt="">
       <h4>Admin</h4>
-
     </center>
-
     <a href="/admin-dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
     <a href="/admin-teacher"><i class="fas fa-chalkboard-teacher"></i><span>Teacher</span></a>
     <a href="/admin-student"><i class="fas fa-user-graduate"></i><span>Student</span></a>
     <a href="/admin-quiz"><i class="fas fa-book"></i><span>Quizzes</span></a>
     <a href="/admin-question"><i class="fas fa-question-circle"></i><span>Questions</span></a>
-
-
-
   </div>
   <!--sidebar end-->
-
 
   <!--content start-->
   <div class="content">
     <br><br><br><br><br>
     {% block content %}
-
     {% endblock content %}
 
-
-    <br><br><br>
-    {% include "quiz/footer.html" %}
   </div>
+  
+  {% include "quiz/footer_dashboard.html" %}
   <!--content end-->
 </body>
+
 
 </html>
