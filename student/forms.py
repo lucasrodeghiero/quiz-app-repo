@@ -15,4 +15,6 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model=models.Student
         fields=['address','mobile','profile_pic']
+        
+
 
