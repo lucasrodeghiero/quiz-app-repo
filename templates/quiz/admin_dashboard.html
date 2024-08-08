@@ -1,6 +1,5 @@
 {% extends 'quiz/adminbase.html' %}
 {% load static %}
-
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -125,6 +124,38 @@
     .card-title a:hover {
       text-decoration: underline;
     }
+
+    .card.bg-primary {
+      background-color: rgb(91, 139, 193) !important; /* Custom primary color */
+    }
+
+    .card.bg-success {
+      background-color: #bc60b8 !important; /* Custom primary color */
+    }
+
+    .card.bg-warning {
+      background-color: #e4a163 !important; /* Custom primary color */
+    }
+
+    .card.bg-danger {
+      background-color: #87c18e !important; /* Custom primary color */
+    }
+
+    .card.bg-primary:hover {
+      background-color: rgb(74, 115, 161) !important; /* Custom primary color */
+    }
+
+    .card.bg-success:hover {
+      background-color: #a555a1 !important; /* Custom primary color */
+    }
+
+    .card.bg-warning:hover {
+      background-color: #bf8753 !important; /* Custom primary color */
+    }
+
+    .card.bg-danger:hover {
+      background-color: #76a97c !important; /* Custom primary color */
+    }
   </style>
 </head>
 
@@ -132,52 +163,44 @@
   <div class="container-fluid py-5">
     <div class="row">
       <div class="col-md-3 mb-4">
-        <div class="card bg-primary text-white">
+        <a href="admin-view-student" class="card bg-primary text-white card-link">
           <div class="card-body">
-            <h5 class="card-title">
-              <a href="admin-view-student" class="text-white text-decoration-none">Total Students</a>
-            </h5>
+            <h5 class="card-title">Total Students</h5>
             <h2 class="card-text text-right">
               <i class="fas fa-user-graduate me-2"></i>{{ total_student }}
             </h2>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-md-3 mb-4">
-        <div class="card bg-success text-white">
+        <a href="admin-view-teacher" class="card bg-success text-white card-link">
           <div class="card-body">
-            <h5 class="card-title">
-              <a href="admin-view-teacher" class="text-white text-decoration-none">Total Teachers</a>
-            </h5>
+            <h5 class="card-title">Total Teachers</h5>
             <h2 class="card-text text-right">
               <i class="fas fa-chalkboard-teacher me-2"></i>{{ total_teacher }}
             </h2>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-md-3 mb-4">
-        <div class="card bg-warning text-white">
+        <a href="admin-view-quiz" class="card bg-warning text-white card-link">
           <div class="card-body">
-            <h5 class="card-title">
-              <a href="admin-view-quiz" class="text-white text-decoration-none">Total Quizzes</a>
-            </h5>
+            <h5 class="card-title">Total Quizzes</h5>
             <h2 class="card-text text-right">
               <i class="fas fa-book me-2"></i>{{ total_quiz }}
             </h2>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-md-3 mb-4">
-        <div class="card bg-danger text-white">
+        <a href="admin-view-question" class="card bg-danger text-white card-link">
           <div class="card-body">
-            <h5 class="card-title">
-              <a href="admin-view-question" class="text-white text-decoration-none">Total Questions</a>
-            </h5>
+            <h5 class="card-title">Total Questions</h5>
             <h2 class="card-text text-right">
               <i class="fas fa-question-circle me-2"></i>{{ total_question }}
             </h2>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
