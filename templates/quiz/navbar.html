@@ -43,32 +43,21 @@
             cursor: pointer;
             padding: 0;
             outline: none;
-            width: 30px;
+            width: 35px;
             height: 30px;
             position: relative;
-            margin-left: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .navbar-toggler .icon-bar {
             display: block;
             width: 100%;
-            height: 3px;
+            height: 4px;
             background-color: #5b9bf1;
-            position: absolute;
-            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-        }
-
-        .navbar-toggler .icon-bar:nth-child(1) {
-            top: 0;
-        }
-
-        .navbar-toggler .icon-bar:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .navbar-toggler .icon-bar:nth-child(3) {
-            bottom: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .navbar-toggler.collapsed .icon-bar:nth-child(1) {
